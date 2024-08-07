@@ -14,12 +14,14 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Home from "./pages/Home/Home";
 import ProductDetail from "./pages/ProductDetail/ProductDetail";
+import Cart from "./pages/Cart/Cart";
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path="/" element={<App />}>
 			<Route index={true} path="/" element={<Home />}></Route>
 			<Route path="/product/:id" element={<ProductDetail />}></Route>
+			<Route path="/cart" element={<Cart />}></Route>
 		</Route>
 	)
 );
