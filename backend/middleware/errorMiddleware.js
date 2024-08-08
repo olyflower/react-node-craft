@@ -5,15 +5,15 @@ const notFound = (req, res, next) => {
 };
 
 const errorHandler = (err, req, res, next) => {
-	let ststusCode = res.ststusCode === 200 ? 500 : res.ststusCode;
+	let statusCode = res.statusCode === 200 ? 500 : res.statusCode;
 	let message = err.message;
 
 	if (err.name === "CastError" && err.kind === "ObjectId") {
 		message = `Resource not found`;
-		ststusCode = 404;
+		statusCode = 404;
 	}
 
-	res.status(ststusCode).json({
+	res.status(statusCode).json({
 		message,
 		stack: process.env.NODE_ENV === "production" ? "prod" : err.stack,
 	});
