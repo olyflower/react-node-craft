@@ -34,7 +34,7 @@ const registerUser = asyncHandler(async (req, res) => {
 	});
 	if (user) {
 		generateToken(res, user._id);
-		res.status(200).json({
+		res.status(201).json({
 			_id: user._id,
 			name: user.name,
 			email: user.email,
@@ -77,7 +77,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 		user.name = req.body.name || user.name;
 		user.email = req.body.email || user.email;
 		if (req.body.password) {
-			user.password = res.body.password;
+			user.password = req.body.password;
 		}
 
 		const updatedUser = await user.save();
