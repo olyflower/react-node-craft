@@ -11,7 +11,7 @@ import {
 	Button,
 	Form,
 } from "react-bootstrap";
-import Raiting from "../../components/Rating/Rating";
+import Rating from "../../components/Rating/Rating";
 import Loader from "../../components/Loader/Loader";
 import Message from "../../components/Message/Message";
 import { useGetProductDetailsQuery } from "../../slices/productsSlice";
@@ -63,7 +63,7 @@ const ProductDetail = () => {
 								<h3>{product.name}</h3>
 							</ListGroup.Item>
 							<ListGroup.Item>
-								<Raiting
+								<Rating
 									value={product.rating}
 									text={`${product.numReviews} reviwes`}
 								/>
@@ -92,7 +92,7 @@ const ProductDetail = () => {
 										<Col>Status:</Col>
 										<Col>
 											<strong>
-												{product.CountInStock > 0
+												{product.countInStock > 0
 													? "In Stock"
 													: "Out of Stock"}
 											</strong>
@@ -136,7 +136,7 @@ const ProductDetail = () => {
 
 								<ListGroup.Item>
 									<Button
-										className="'btn-clock"
+										className="'btn-block"
 										type="button"
 										disabled={product.countInStock === 0}
 										onClick={addToCartHandler}
