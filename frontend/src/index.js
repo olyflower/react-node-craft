@@ -22,8 +22,14 @@ import Shipping from "./pages/Shipping/Shipping";
 import Payment from "./pages/Payment/Payment";
 import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
 import Order from "./pages/Order/Order";
+import OrderList from "./pages/OrderList/OrderList";
 import Profile from "./pages/Profile/Profile";
+import ProductList from "./pages/ProductList/ProductList";
+import ProductEdit from "./pages/ProductEdit/ProductEdit";
+import UserList from "./pages/UserList/UserList";
+import UserEdit from "./pages/UserEdit/UserEdit";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import AdminRoute from "./components/AdminRoute/AdminRoute";
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
@@ -40,6 +46,23 @@ const router = createBrowserRouter(
 				<Route path="/placeorder" element={<PlaceOrder />}></Route>
 				<Route path="/order/:id" element={<Order />}></Route>
 				<Route path="/profile" element={<Profile />}></Route>
+			</Route>
+
+			<Route path="" element={<AdminRoute />}>
+				<Route path="/admin/orderlist" element={<OrderList />}></Route>
+				<Route
+					path="/admin/productlist"
+					element={<ProductList />}
+				></Route>
+				<Route
+					path="/admin/product/:id/edit"
+					element={<ProductEdit />}
+				></Route>
+				<Route path="/admin/userlist" element={<UserList />}></Route>
+				<Route
+					path="/admin/user/:id/edit"
+					element={<UserEdit />}
+				></Route>
 			</Route>
 		</Route>
 	)

@@ -16,7 +16,6 @@ import Loader from "../../components/Loader/Loader";
 import Message from "../../components/Message/Message";
 import { useGetProductDetailsQuery } from "../../slices/productsSlice";
 import { addToCart } from "../../slices/cartSlice";
-import img from "../../assets/img1.jpg";
 
 const ProductDetail = () => {
 	const { id: productId } = useParams();
@@ -51,7 +50,7 @@ const ProductDetail = () => {
 				<Row>
 					<Col md={5}>
 						<Image
-							src={img}
+							src={product.image}
 							alt={product.name}
 							width={300}
 							height={400}

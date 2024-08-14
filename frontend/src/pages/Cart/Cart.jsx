@@ -13,7 +13,6 @@ import {
 import { FaTrash } from "react-icons/fa";
 import Message from "../../components/Message/Message";
 import { addToCart, removeFromCart } from "../../slices/cartSlice";
-import img from "../../assets/img1.jpg";
 
 const Cart = () => {
 	const navigate = useNavigate();
@@ -49,7 +48,7 @@ const Cart = () => {
 								<Row>
 									<Col md={2}>
 										<Image
-											src={img}
+											src={item.image}
 											alt={item.name}
 											fluid
 											rounded

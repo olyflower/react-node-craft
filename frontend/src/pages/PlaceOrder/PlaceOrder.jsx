@@ -8,7 +8,6 @@ import Loader from "../../components/Loader/Loader";
 import { useCreateOrderMutation } from "../../slices/orderSlice";
 import { clearCart } from "../../slices/cartSlice";
 import { toast } from "react-toastify";
-import img from "../../assets/img1.jpg";
 
 const PlaceOrder = () => {
 	const navigate = useNavigate();
@@ -23,7 +22,12 @@ const PlaceOrder = () => {
 		} else if (!cart.paymentMethod) {
 			navigate("/payment");
 		}
-	}, [cart.paymentMethod, cart.shippingAddress.address, navigate]);
+	}, [
+		cart.paymentMethod,
+		cart.shippingAddress,
+		cart.shippingAddress.address,
+		navigate,
+	]);
 
 	const placeOrderHandler = async () => {
 		try {
@@ -38,7 +42,6 @@ const PlaceOrder = () => {
 			}).unwrap();
 			dispatch(clearCart());
 			navigate(`/order/${res._id}`);
-			console.log("Order");
 		} catch (error) {
 			const errorMessage =
 				error?.data?.message ||
@@ -76,12 +79,12 @@ const PlaceOrder = () => {
 								<Message>Cart is empty</Message>
 							) : (
 								<ListGroup variant="flush">
-									{cart.cartItems.map((item, index) => (
-										<ListGroup.Item key={index}>
+									{cart.cartItems.map((item) => (
+										<ListGroup.Item key={item._id}>
 											<Row>
 												<Col md={1}>
 													<Image
-														src={img}
+														src={item.image}
 														alt={item.name}
 														fluid
 														rounded
@@ -89,7 +92,7 @@ const PlaceOrder = () => {
 												</Col>
 												<Col>
 													<Link
-														to={`/product/${item.product}`}
+														to={`/product/${item._id}`}
 													>
 														{item.name}
 													</Link>

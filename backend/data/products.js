@@ -1,7 +1,7 @@
 const products = [
 	{
 		name: "product1",
-		image: "../../assets/img1.jpg",
+		image: "/images/img1.jpg",
 		description: "description",
 		brand: "brand",
 		category: "category",
@@ -12,7 +12,7 @@ const products = [
 	},
 	{
 		name: "product2",
-		image: "/assets/img2.jpg",
+		image: "/images/img2.jpg",
 		description: "description",
 		brand: "brand",
 		category: "category",
@@ -23,7 +23,7 @@ const products = [
 	},
 	{
 		name: "product3",
-		image: "/assets/img3.jpg",
+		image: "/images/img3.jpg",
 		description: "description",
 		brand: "brand",
 		category: "category",
@@ -34,7 +34,7 @@ const products = [
 	},
 	{
 		name: "product4",
-		image: "/assets/img4.jpg",
+		image: "/images/img4.jpg",
 		description: "description",
 		brand: "brand",
 		category: "category",
@@ -45,7 +45,7 @@ const products = [
 	},
 	{
 		name: "product5",
-		image: "/assets/img5.jpg",
+		image: "/images/img5.jpg",
 		description: "description",
 		brand: "brand",
 		category: "category",
@@ -56,7 +56,7 @@ const products = [
 	},
 	{
 		name: "product6",
-		image: "/assets/img6.jpg",
+		image: "/images/img6.jpg",
 		description: "description",
 		brand: "brand",
 		category: "category",
@@ -67,7 +67,7 @@ const products = [
 	},
 	{
 		name: "product7",
-		image: "/assets/img7.jpg",
+		image: "/images/img7.jpg",
 		description: "description",
 		brand: "brand",
 		category: "category",

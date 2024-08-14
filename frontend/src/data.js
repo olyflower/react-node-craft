@@ -2,7 +2,7 @@ const data = [
 	{
 		_id: "1",
 		name: "product1",
-		image: "../../assets/img1.jpg",
+		image: "/images/img1.jpg",
 		description: "description",
 		brand: "brand",
 		category: "category",
@@ -14,7 +14,7 @@ const data = [
 	{
 		_id: "2",
 		name: "product2",
-		image: "/assets/img2.jpg",
+		image: "/images/img2.jpg",
 		description: "description",
 		brand: "brand",
 		category: "category",
@@ -26,7 +26,7 @@ const data = [
 	{
 		_id: "3",
 		name: "product3",
-		image: "/assets/img3.jpg",
+		image: "/images/img3.jpg",
 		description: "description",
 		brand: "brand",
 		category: "category",
@@ -38,7 +38,7 @@ const data = [
 	{
 		_id: "4",
 		name: "product4",
-		image: "/assets/img4.jpg",
+		image: "/images/img4.jpg",
 		description: "description",
 		brand: "brand",
 		category: "category",
@@ -50,7 +50,7 @@ const data = [
 	{
 		_id: "5",
 		name: "product5",
-		image: "/assets/img5.jpg",
+		image: "/images/img5.jpg",
 		description: "description",
 		brand: "brand",
 		category: "category",
@@ -62,7 +62,7 @@ const data = [
 	{
 		_id: "6",
 		name: "product6",
-		image: "/assets/img6.jpg",
+		image: "/images/img6.jpg",
 		description: "description",
 		brand: "brand",
 		category: "category",
@@ -74,7 +74,7 @@ const data = [
 	{
 		_id: "7",
 		name: "product7",
-		image: "/assets/img7.jpg",
+		image: "/images/img7.jpg",
 		description: "description",
 		brand: "brand",
 		category: "category",
