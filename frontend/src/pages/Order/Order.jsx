@@ -12,7 +12,6 @@ import {
 	useGetPayPalClientIdQuery,
 	useDeliverOrderMutation,
 } from "../../slices/orderSlice";
-import img from "../../assets/img1.jpg";
 
 const Order = () => {
 	const { id: orderId } = useParams();
@@ -61,7 +60,7 @@ const Order = () => {
 	function onApprove(data, actions) {
 		return actions.order.capture().then(async function (details) {
 			try {
-				await payOrder({ orderId, details });
+				await payOrder({ orderId, details }).unwrap();
 				refetch();
 				toast.success("Payment success");
 			} catch (error) {
@@ -70,13 +69,8 @@ const Order = () => {
 		});
 	}
 
-	async function onApproveTest() {
-		await payOrder({ orderId, details: { payer: {} } });
-		refetch();
-		toast.success("Payment success");
-	}
-	function onError(error) {
-		toast.error(error.message);
+	function onError(err) {
+		toast.error(err.message);
 	}
 
 	function createOrder(data, actions) {
@@ -100,8 +94,8 @@ const Order = () => {
 			await deliverOrder(orderId);
 			refetch();
 			toast.success("Order delivered");
-		} catch (error) {
-			toast.error(error?.data?.message || error.message);
+		} catch (err) {
+			toast.error(err?.data?.message || err.message);
 		}
 	};
 
@@ -164,7 +158,7 @@ const Order = () => {
 									<Row>
 										<Col md={1}>
 											<Image
-												src={img}
+												src={item.image}
 												alt={item.name}
 												fluid
 												rounded
@@ -220,19 +214,11 @@ const Order = () => {
 										<Loader />
 									) : (
 										<div>
-											{/* <Button
-												onClick={onApproveTest}
-												style={{ marginBottom: "10px" }}
-											>
-												Test pay Order
-											</Button> */}
-											<div>
-												<PayPalButtons
-													createOrder={createOrder}
-													onApprove={onApprove}
-													onError={onError}
-												></PayPalButtons>
-											</div>
+											<PayPalButtons
+												createOrder={createOrder}
+												onApprove={onApprove}
+												onError={onError}
+											></PayPalButtons>
 										</div>
 									)}
 								</ListGroup.Item>

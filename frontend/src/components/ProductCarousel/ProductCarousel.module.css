@@ -1,0 +1,16 @@
+.caption {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgbared(0, 0, 0, 0.5);
+}
+
+.image {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 400px;
+	background-color: #fff;
+}

@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useLogoutMutation } from "../../slices/usersSlice";
 import { logout } from "../../slices/authSlice";
+import { clearCart } from "../../slices/cartSlice";
+import Search from "../../components/Search/Search";
 import { Badge, Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
 import { LinkContainer } from "react-router-bootstrap";
@@ -21,6 +23,7 @@ const Header = () => {
 		try {
 			await logoutApiCall().unwrap();
 			dispatch(logout());
+			dispatch(clearCart());
 			navigate("/login");
 		} catch (error) {
 			console.log(error);
@@ -41,6 +44,7 @@ const Header = () => {
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
 					<Navbar.Collapse id="basic-navbar-nav">
 						<Nav className="ms-auto">
+							<Search/>
 							<LinkContainer to="/cart">
 								<Nav.Link>
 									<FaShoppingCart />
