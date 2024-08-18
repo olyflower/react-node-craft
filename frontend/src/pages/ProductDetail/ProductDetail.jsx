@@ -227,7 +227,7 @@ const ProductDetail = () => {
 													}
 												>
 													<option value="">
-														'Select
+														Select rating value
 													</option>
 													<option value="1">
 														1 - Poor
